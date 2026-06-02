@@ -1,0 +1,31 @@
+# ZEUS – Essensuals | Netlify config
+
+[[headers]]
+  # Cache frame images for 1 year — they never change
+  for = "/assets/frames/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Cache logo and other assets for 1 week
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  # Never cache HTML — always fresh
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  # Never cache CSS — always fresh (version query string in HTML handles cache busting)
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  # Never cache JS — always fresh
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
