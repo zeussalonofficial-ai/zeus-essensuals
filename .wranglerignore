@@ -1,0 +1,8 @@
+node_modules/
+.git/
+.github/
+generate-handover.js
+package.json
+package-lock.json
+netlify.toml
+.wrangler/
