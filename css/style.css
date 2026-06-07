@@ -755,6 +755,39 @@ body.use-fallback #bg-canvas      { display: none;  }
   flex: 5;
 }
 
+/* Gallery overlay with service name + description */
+.gal-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1.2rem 1.1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+.gal-item:hover .gal-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gal-label {
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.35rem 0;
+  text-transform: uppercase;
+}
+.gal-desc {
+  color: rgba(255,255,255,0.88);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
 .gal-item:hover img {
   transform: scale(1.04);
   filter: brightness(1);
